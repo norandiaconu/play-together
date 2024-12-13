@@ -1,0 +1,38 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+    <div class="spacer"></div>
+    <span>play together</span>
+    <div class="spacer"></div>
+</div>
+
+<div class="content" role="main">
+    <h3>
+        Log in to Steam in a different tab and then navigate to the following
+        url:
+    </h3>
+    <a href="https://steamcommunity.com/my/friends/"
+        >https://steamcommunity.com/my/friends/</a
+    >
+    <h3>
+        Click your name or the friend you want to compare to go to their profile
+        and then click Games on the right side (between Badges and Inventory)
+    </h3>
+    <h3>
+        When the page loads, press End, Ctrl+A, Ctrl+C to copy the whole page
+        text
+    </h3>
+    <h3>Paste that text into one of the boxes below</h3>
+    <h2>Box 1</h2>
+    <textarea #box1 class="mb10"></textarea>
+    <h2>Box 2</h2>
+    <textarea #box2 class="mb10"></textarea>
+    <h2>Box 3</h2>
+    <textarea #box3 class="mb10"></textarea>
+    <button
+        (click)="click(box1.value, box2.value, box3.value)"
+        class="search-button"
+    >
+        SEARCH
+    </button>
+    <p>{{ playTogether }}</p>
+</div>
