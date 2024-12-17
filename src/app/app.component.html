@@ -1,38 +1,31 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<div class="toolbar">
     <div class="spacer"></div>
     <span>play together</span>
     <div class="spacer"></div>
 </div>
 
-<div class="content" role="main">
-    <h3>
-        Log in to Steam in a different tab and then navigate to the following
-        url:
-    </h3>
-    <a href="https://steamcommunity.com/my/friends/"
-        >https://steamcommunity.com/my/friends/</a
+<div class="content">
+    <h3>Log in to Steam in a different tab and open the following link:</h3>
+    <a href="https://steamcommunity.com/my/games?tab=all" target="_blank" class="link"
+        >https://steamcommunity.com/my/games</a
     >
-    <h3>
-        Click your name or the friend you want to compare to go to their profile
-        and then click Games on the right side (between Badges and Inventory)
-    </h3>
-    <h3>
-        When the page loads, press End, Ctrl+A, Ctrl+C to copy the whole page
-        text
-    </h3>
-    <h3>Paste that text into one of the boxes below</h3>
+    <h3>When the page loads, press End, Ctrl+A, Ctrl+C to copy the whole page text</h3>
+    <h3>Paste that text into the first box</h3>
+    <h3>Open this next link:</h3>
+    <a href="https://steamcommunity.com/my/friends" target="_blank" class="link"
+        >https://steamcommunity.com/my/friends</a
+    >
+    <h3>Click the friends you want to compare to go to their profiles and then click Games</h3>
+    <p>(on the right side between Badges and Inventory)</p>
+    <h3>End, Ctrl+A, Ctrl+C to copy the whole pages for the other boxes</h3>
     <h2>Box 1</h2>
-    <textarea #box1 class="mb10"></textarea>
+    <textarea #box1 class="textbox" placeholder="Friend 1"></textarea>
     <h2>Box 2</h2>
-    <textarea #box2 class="mb10"></textarea>
+    <textarea #box2 class="textbox" placeholder="Friend 2"></textarea>
     <h2>Box 3</h2>
-    <textarea #box3 class="mb10"></textarea>
-    <button
-        (click)="click(box1.value, box2.value, box3.value)"
-        class="search-button"
-    >
-        SEARCH
-    </button>
-    <p>{{ playTogether }}</p>
+    <textarea #box3 class="textbox" placeholder="Friend 3"></textarea>
+    <button mat-button (click)="click(box1.value, box2.value, box3.value)" class="search-button">SEARCH</button>
+    <h3 *ngIf="playTogether.length">Common Games:</h3>
+    <p>{{ playTogether.join(", ") }}</p>
 </div>

@@ -15,9 +15,10 @@ export class AppComponent {
         const list1 = this.getGames(box1);
         const list2 = this.getGames(box2);
         const list3 = this.getGames(box3);
-        this.playTogether = list1.filter(
-            (item) => list2.includes(item) && list3.includes(item)
-        );
+        this.playTogether = list1.filter((item) => list2.includes(item) && list3.includes(item));
+        setTimeout(() => {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }, 10);
     }
 
     getGames(textInput: string): string[] {
