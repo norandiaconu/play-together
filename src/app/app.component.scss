@@ -1,6 +1,10 @@
 $white: #dcdedf;
 $blue: #2a475e;
 
+.box-row {
+    display: flex;
+}
+
 .textbox {
     background-color: darkgrey;
     border: 2px solid $blue;
@@ -8,13 +12,11 @@ $blue: #2a475e;
     resize: none;
 }
 
-.search-button {
-    margin-top: 2rem;
-    padding: 1rem 2rem;
+.button {
     background-color: $blue;
-    color: $white;
     border: 2px solid $white;
-    border-radius: 20px;
+    color: $white;
+    border-radius: 10px;
     font-size: 1rem;
 
     &:hover {
@@ -22,6 +24,16 @@ $blue: #2a475e;
         color: $blue;
         font-weight: bold;
     }
+}
+
+.increment-decrement-buttons {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.search-button {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
 }
 
 h2,
