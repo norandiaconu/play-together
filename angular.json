@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "play-together:build:production"
+              "buildTarget": "play-together:build:production"
             },
             "development": {
-              "browserTarget": "play-together:build:development"
+              "buildTarget": "play-together:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "play-together:build"
+            "buildTarget": "play-together:build"
           }
         }
       }
