@@ -4,12 +4,14 @@ import { Component } from '@angular/core';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [],
 })
 export class AppComponent {
     title = 'play-together';
     public playTogether: string[] = [];
     public extraBoxes = 0;
-    public emptyBox = ["There's an empty box"];
+    public emptyBox = ['There\'s an empty box'];
 
     constructor() {}
 
