@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: true,
-    imports: [],
+    imports: []
 })
 export class AppComponent {
     title = 'play-together';
