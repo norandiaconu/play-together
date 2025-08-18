@@ -1,57 +1,51 @@
 <!-- Toolbar -->
 <div class="toolbar">
-  <div class="spacer"></div>
-  <span>play together</span>
-  <div class="spacer"></div>
+    <div class="spacer"></div>
+    <span>play together</span>
+    <div class="spacer"></div>
 </div>
 
 <div class="content">
-  <h3>Log in to Steam in a different tab and open the following link:</h3>
-  <a href="https://steamcommunity.com/my/games?tab=all" target="_blank" class="link"
-    >https://steamcommunity.com/my/games</a
-    >
+    <h3>Log in to Steam in a different tab and open the following link:</h3>
+    <a href="https://steamcommunity.com/my/games?tab=all" target="_blank" class="link">https://steamcommunity.com/my/games</a>
     <h3>When the page loads, press End, Ctrl+A, Ctrl+C to copy the whole page text</h3>
     <h3>Paste that text into the first box</h3>
     <h3>Open this next link:</h3>
-    <a href="https://steamcommunity.com/my/friends" target="_blank" class="link"
-      >https://steamcommunity.com/my/friends</a
-      >
-      <h3>Click the friends you want to compare to go to their profiles and then click Games</h3>
-      <p>(on the right side between Badges and Inventory)</p>
-      <h3>End, Ctrl+A, Ctrl+C to copy the whole pages for the other boxes</h3>
-      <div class="box-row">
+    <a href="https://steamcommunity.com/my/friends" target="_blank" class="link">https://steamcommunity.com/my/friends</a>
+    <h3>Click the friends you want to compare to go to their profiles and then click Games</h3>
+    <p>(on the right side between Badges and Inventory)</p>
+    <h3>End, Ctrl+A, Ctrl+C to copy the whole pages for the other boxes</h3>
+    <div class="box-row">
         <div>
-          <h2>Player 1</h2>
-          <textarea #box1 class="textbox" placeholder="Your profile"></textarea>
+            <h2>Player 1</h2>
+            <textarea #box1 class="textbox" placeholder="Your profile"></textarea>
         </div>
         <div>
-          <h2>Player 2</h2>
-          <textarea #box2 class="textbox" placeholder="Friend 1"></textarea>
+            <h2>Player 2</h2>
+            <textarea #box2 class="textbox" placeholder="Friend 1"></textarea>
         </div>
-      </div>
-      <div class="box-row">
+    </div>
+    <div class="box-row">
         <div>
-          <h2 [hidden]="extraBoxes === 0">Player 3</h2>
-          <textarea #box3 class="textbox" placeholder="Friend 2" [hidden]="extraBoxes === 0"></textarea>
+            <h2 [hidden]="extraBoxes === 0">Player 3</h2>
+            <textarea #box3 class="textbox" placeholder="Friend 2" [hidden]="extraBoxes === 0"></textarea>
         </div>
         <div>
-          <h2 [hidden]="extraBoxes < 2">Player 4</h2>
-          <textarea #box4 class="textbox" placeholder="Friend 3" [hidden]="extraBoxes < 2"></textarea>
+            <h2 [hidden]="extraBoxes < 2">Player 4</h2>
+            <textarea #box4 class="textbox" placeholder="Friend 3" [hidden]="extraBoxes < 2"></textarea>
         </div>
-      </div>
-      <span>
+    </div>
+    <span>
         @if (extraBoxes < 2) {
-          <button (click)="increaseBoxes()" class="increment-decrement-buttons button">+</button>
+            <button (click)="increaseBoxes()" class="increment-decrement-buttons button">+</button>
         }
         @if (extraBoxes > 0) {
-          <button (click)="decreaseBoxes()" class="increment-decrement-buttons button">-</button>
+            <button (click)="decreaseBoxes()" class="increment-decrement-buttons button">-</button>
         }
-      </span>
-      <button (click)="search(box1.value, box2.value, box3.value, box4.value)" class="search-button button">
-        SEARCH
-      </button>
-      @if (playTogether.length) {
+    </span>
+    <button (click)="search(box1.value, box2.value, box3.value, box4.value)" class="search-button button">SEARCH</button>
+    @if (playTogether.length) {
         <h3>Common Games:</h3>
-      }
-      <p>{{ playTogether.join(", ") }}</p>
-    </div>
+    }
+    <p>{{ playTogether.join(", ") }}</p>
+</div>

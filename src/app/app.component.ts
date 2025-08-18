@@ -10,19 +10,17 @@ export class AppComponent {
     title = 'play-together';
     public playTogether: string[] = [];
     public extraBoxes = 0;
-    public emptyBox = ['There\'s an empty box'];
+    public emptyBox = ["There's an empty box"];
 
-    constructor() {}
-
-    increaseBoxes(): void {
+    protected increaseBoxes(): void {
         this.extraBoxes++;
     }
 
-    decreaseBoxes(): void {
+    protected decreaseBoxes(): void {
         this.extraBoxes--;
     }
 
-    search(box1: string, box2: string, box3: string, box4: string): void {
+    protected search(box1: string, box2: string, box3: string, box4: string): void {
         if (box1 === '' || box2 === '') {
             this.playTogether = this.emptyBox;
             return;
@@ -36,9 +34,7 @@ export class AppComponent {
             }
             const list3 = this.getGames(box3);
             const list4 = this.getGames(box4);
-            this.playTogether = list1.filter(
-                (item) => list2.includes(item) && list3.includes(item) && list4.includes(item)
-            );
+            this.playTogether = list1.filter((item) => list2.includes(item) && list3.includes(item) && list4.includes(item));
         } else if (this.extraBoxes === 1) {
             if (box3 === '') {
                 this.playTogether = this.emptyBox;
@@ -49,12 +45,13 @@ export class AppComponent {
         } else {
             this.playTogether = list1.filter((item) => list2.includes(item));
         }
+        this.playTogether.sort((a, b) => a.localeCompare(b));
         setTimeout(() => {
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }, 10);
     }
 
-    getGames(textInput: string): string[] {
+    private getGames(textInput: string): string[] {
         const gameRegex = /.*\nTOTAL PLAYED/g;
         const gamesMatches = textInput.match(gameRegex);
         const games: string[] = [];
