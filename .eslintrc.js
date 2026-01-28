@@ -12,33 +12,24 @@ https://github.com/typescript-eslint/tslint-to-eslint-config/blob/master/docs/FA
 Happy linting! 💖
 */
 module.exports = {
-    ignorePatterns: [
-        "coverage/",
-        "docs/",
-        "environments/",
-        ".eslintrc.js",
-        "index.js",
-        "jest.config.js",
-        "main.ts",
-        "setup-jest.ts",
-    ],
+    ignorePatterns: ["coverage/", "docs/", "environments/", ".eslintrc.js", "index.js", "main.ts", "vitest.config.ts"],
     env: {
         browser: true,
         es6: true,
-        node: true,
+        node: true
     },
     extends: ["plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/recommended-requiring-type-checking"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         project: "tsconfig.spec.json",
-        sourceType: "module",
+        sourceType: "module"
     },
     plugins: [
         "eslint-plugin-import",
         "@angular-eslint/eslint-plugin",
         "@typescript-eslint",
         "@typescript-eslint/tslint",
-        "@angular-eslint",
+        "@angular-eslint"
     ],
     root: true,
     rules: {
@@ -58,8 +49,8 @@ module.exports = {
         "@typescript-eslint/explicit-member-accessibility": [
             "off",
             {
-                accessibility: "explicit",
-            },
+                accessibility: "explicit"
+            }
         ],
         "@typescript-eslint/indent": "error",
         "@typescript-eslint/member-delimiter-style": [
@@ -67,13 +58,13 @@ module.exports = {
             {
                 multiline: {
                     delimiter: "semi",
-                    requireLast: true,
+                    requireLast: true
                 },
                 singleline: {
                     delimiter: "semi",
-                    requireLast: false,
-                },
-            },
+                    requireLast: false
+                }
+            }
         ],
         "@typescript-eslint/member-ordering": "error",
         "@typescript-eslint/naming-convention": [
@@ -82,24 +73,24 @@ module.exports = {
                 selector: "variable",
                 format: ["camelCase", "UPPER_CASE"],
                 leadingUnderscore: "forbid",
-                trailingUnderscore: "forbid",
-            },
+                trailingUnderscore: "forbid"
+            }
         ],
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-empty-interface": "error",
         "@typescript-eslint/no-inferrable-types": [
             "error",
             {
-                ignoreParameters: true,
-            },
+                ignoreParameters: true
+            }
         ],
         "@typescript-eslint/no-misused-new": "error",
         "@typescript-eslint/no-non-null-assertion": "error",
         "@typescript-eslint/no-shadow": [
             "error",
             {
-                hoist: "all",
-            },
+                hoist: "all"
+            }
         ],
         "@typescript-eslint/no-unused-expressions": "error",
         "@typescript-eslint/prefer-function-type": "error",
@@ -123,8 +114,8 @@ module.exports = {
         "max-len": [
             "error",
             {
-                code: 140,
-            },
+                code: 140
+            }
         ],
         "no-bitwise": "error",
         "no-caller": "error",
@@ -151,17 +142,17 @@ module.exports = {
             "error",
             "always",
             {
-                markers: ["/"],
-            },
+                markers: ["/"]
+            }
         ],
         "@typescript-eslint/tslint/config": [
             "error",
             {
                 rules: {
                     "import-spacing": true,
-                    whitespace: [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"],
-                },
-            },
-        ],
-    },
+                    whitespace: [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"]
+                }
+            }
+        ]
+    }
 };
