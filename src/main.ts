@@ -1,7 +1,7 @@
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { importProvidersFrom } from '@angular/core';
+import { importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
-    providers: [importProvidersFrom(BrowserModule)],
+    providers: [provideZoneChangeDetection(),importProvidersFrom(BrowserModule)],
 }).catch((err) => console.error(err));
